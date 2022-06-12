@@ -11,6 +11,30 @@
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 ```
 
+3. Import PowerShell Module and Install Forest
+
+```
+Import-Module ADDSDeployment
+```
+
+```
+Install-Module ADDSDeployment
+```
+# Set the Domain Name
+
+# After reboot DC will set DNS IP to a loopback address
+
+4. Configure Static IP on DC
+
+```
+Get-NetIPAddress -IPAddress '192.168.100.156'
+```
+
+```
+Set-DnsClientServerAddress -InterfaceIndex 12 -ServerAddresses 192.168.0.254
+```
+
+
 ```
 Get-NetIPAddress
 ```
