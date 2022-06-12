@@ -11,4 +11,15 @@
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 ```
 
+```
+Get-NetIPAddress
+```
 
+
+# Joining the Workstation to the Domain Controller
+
+
+
+```
+Add-Computer -Domainname jelly.com -Credential jelly/administrator -Force -Restart
+```
